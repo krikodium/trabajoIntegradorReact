@@ -16,9 +16,16 @@ class Characters extends Component{
             populares: data.results
         }))
         .catch(error => console.log('el error fue ' + error))
-        
     }
     
+    verCartelera(){
+        fetch('https://api.themoviedb.org/3/movie/popular?api_key=04370869e911ae9d10d76ad2c6d1796e&language=en-US&page=1')
+        .then(response => response.json())
+        .then(data => this.setState({
+            populares: data.results
+        }))
+        .catch(error => console.log('el error fue ' + error))
+    }
     
 
     componentDidUpdate(){
@@ -53,6 +60,7 @@ class Characters extends Component{
                 <button onClick={() => this.masPersonajes()}>mas peliculas</button>
             }
             {
+
                 this.state.verMas ? 
                 this.state.populares.map((personaje, idx) => <Character key={personaje + idx} info={personaje} />) :
                 <p></p>

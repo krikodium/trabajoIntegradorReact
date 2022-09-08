@@ -1,4 +1,5 @@
 import { Component } from "react";
+import { Link } from "react-router-dom";
 import './styles.css'
 
 class Character extends Component{
@@ -23,7 +24,7 @@ class Character extends Component{
     render(){
         return(
             <div className='character-card'>
-            <img src={"https://image.tmdb.org/t/p/w500" + this.props.info.poster_path} alt="" />
+            <Link to={`/detail/${this.props.info.id}`}><img src={"https://image.tmdb.org/t/p/w500" + this.props.info.poster_path} alt="" /></Link>
             <h2>{this.props.info.title}</h2> 
             <p>{this.props.info.release_date}</p> 
             
