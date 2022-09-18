@@ -37,7 +37,7 @@ class Movies extends Component{
             <section className="card-container">
                 {
                     this.state.populares.length > 0 ?
-                    this.state.populares.slice(0,8).map((personaje, idx) => <MovieCard key={personaje + idx} info={personaje} />) : 
+                    this.state.populares.slice(0,8).map((pelicula, idx) => <MovieCard key={pelicula + idx} info={pelicula} />) : 
                     <img src="https://media.giphy.com/media/3AMRa6DRUhMli/giphy.gif"/>
                 }
                 

@@ -16,7 +16,7 @@ class Buscador extends Component{
 	actualizarEstado(event){
 		this.setState({
 			valorInput:event.target.value
-		}, ()=> this.props.buscador(this.state.valorInput))
+		}, ()=> this.props.buscador(this.state.valorInput)) //prop de home peticion API
 	}
 
 
