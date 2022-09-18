@@ -32,15 +32,16 @@ class Favorites extends Component{
     render(){
         return(
             <>
-            <nav>
+            
             <Header/>
-            </nav>
+            
             <div className='fav-container'>
                 
                 {
                     this.state.peliculaFavorito.length > 0 ? 
-                    this.state.peliculaFavorito.map((elm, idx)=><MovieCard key={idx + elm} info={elm}/>) :
-                    <h1><Link to={"/"}>NO TIENE FAVORITOS, CLICK PARA VER PELICULAS</Link></h1>
+                    this.state.peliculaFavorito.map((fav, idx)=><MovieCard key={idx + fav} info={fav}/>) :
+                    <div className='noFav'><h1><Link to={"/"}>NO TIENE FAVORITOS, CLICK PARA VER PELICULAS</Link></h1></div>
+                    
                 }
             </div>
             <Footer/>

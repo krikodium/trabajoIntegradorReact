@@ -1,6 +1,7 @@
 import { Component } from "react";
 import MovieCard from "../MovieCard/MovieCard";
-import Buscador from "../Buscador/Buscador";
+
+import { Link } from "react-router-dom";
 class Movies extends Component{
     constructor(props){
         super(props);
@@ -28,32 +29,25 @@ class Movies extends Component{
         })})
         .catch(error => console.log('el error fue ' + error))
     }
-    
-    
-    componentDidUpdate(){
-    }
-    
-
-
 
     render(){
         return(
             <>
-            <h1>Peliculas Populares</h1>
+            <Link to={'/allPop'}><h1>Peliculas Pop</h1></Link>
             <section className="card-container">
                 {
                     this.state.populares.length > 0 ?
                     this.state.populares.slice(0,8).map((personaje, idx) => <MovieCard key={personaje + idx} info={personaje} />) : 
-                    <h1>Cargando....</h1>
+                    <img src="https://media.giphy.com/media/3AMRa6DRUhMli/giphy.gif"/>
                 }
                 
             </section>
-            <h1>Peliculas En Cartelera</h1>
+            <Link to={'/soon'}><h1>Peliculas En Cartelera</h1></Link>
             <section className="card-container">
                 {
                     this.state.latest.length > 0 ?
                     this.state.latest.slice(0,8).map((pelicula, idx) => <MovieCard key={pelicula + idx} info={pelicula} />) : 
-                    <h1>Cargando....</h1>
+                    <img src="https://media.giphy.com/media/3AMRa6DRUhMli/giphy.gif"/>
                 }
                 
             </section>

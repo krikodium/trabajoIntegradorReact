@@ -3,7 +3,8 @@ import React from "react";
 function Footer(){
     return(
         <footer>
-        <p>Copyright © Dashboard 2022</p>
+        <p>Mateo Krikorian</p>
+        <p>Agustin Taylor</p>
     </footer>
     )
 }

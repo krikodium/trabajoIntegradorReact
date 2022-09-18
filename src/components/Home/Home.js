@@ -13,9 +13,9 @@ class Home extends Component{
         }
     }
 
-    buscador(name){
-        if(name !== ''){
-            fetch(`https://api.themoviedb.org/3/search/movie?api_key=04370869e911ae9d10d76ad2c6d1796e&query=${name}`)
+    buscador(peli){
+        if(peli !== ''){
+            fetch(`https://api.themoviedb.org/3/search/movie?api_key=04370869e911ae9d10d76ad2c6d1796e&query=${peli}`)
             .then(resp=> resp.json())
             .then(data=> this.setState({
                 resultados: data.results
@@ -31,10 +31,8 @@ class Home extends Component{
     render(){
         return(
             <>
-        <nav>
             <Header/>
-        </nav>
-        <Buscador buscador={(name)=> this.buscador(name)}/>
+        <Buscador buscador={(peli)=> this.buscador(peli)}/>
             {
                 this.state.resultados.length > 0 ? 
                 <div className='card-container'>{this.state.resultados.slice(0, 12).map((mov, idx)=><MovieCard key={mov + idx} info={mov}/>)}</div>: 

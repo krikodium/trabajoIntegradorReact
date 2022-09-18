@@ -4,7 +4,8 @@ class Buscador extends Component{
 	constructor(props){
 		super(props)
 		this.state = {
-			valorInput: ''
+			valorInput: '',
+			mas: false
 		}
 	}
 
@@ -18,11 +19,16 @@ class Buscador extends Component{
 		}, ()=> this.props.buscador(this.state.valorInput))
 	}
 
+
 	render(){
 		return(
+			<>
+			<div className='buscadorContenedor'>
 			<form onSubmit={(event)=> this.prevenirRefresh(event)}>
-				<input placeholder='buscar peliculas' type='text' onChange={(event)=> this.actualizarEstado(event)} value={this.state.valorInput}/>
+				<input className='buscadorInput' placeholder=' buscar peliculas' type='text' onChange={(event)=> this.actualizarEstado(event)} value={this.state.valorInput} required/>
 			</form>
+			</div>
+			</>
 		)
 	}
 }

@@ -1,4 +1,7 @@
 /* Resets */
+
+
+
 *{
     box-sizing: border-box;
 }
@@ -131,3 +134,21 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+.noFav{
+    margin: 5% 0 30% 0;
+}
+
+.buscadorContenedor{
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.buscadorInput{
+    margin: 4% 0% 0 0;
+    height: 30px;
+    width: 250px;
+    border-radius: 15px;
+}
+
